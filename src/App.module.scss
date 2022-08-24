@@ -1,5 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+
 .App {
   text-align: center;
+  background-color: #E5D2C4;
+
 }
 
 .App-logo {
@@ -12,6 +16,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
