@@ -1,19 +1,24 @@
+import { Card, Button, CardMedia, CardContent, Typography, CardActions } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { allpokemons } from "../../Api/index";
+import PokemonCard from "../../components/Pokemon";
+import styles from "./pokedex.module.scss"
 
-export default function Pokedex() {
-  const [pokemons, setPokemons] = useState<Record<any, any>>([]);
+interface PokeProps {
+  pokemons: any[];
+}
 
-  const fetchPokemons = async () => {
-    const result = await allpokemons();
-    setPokemons(result);
-  };
+export default function Pokedex({pokemons}: PokeProps) {
+ 
 
-  useEffect(() => {
-    fetchPokemons();
-    console.log(pokemons);
-  }, []);
-  console.log("pokemons", pokemons);
-  
-  return <div>oi</div>;
+  return (
+   <>
+   <div >
+      {pokemons.map((pokemon) => (
+        <PokemonCard pokemons={pokemon}/>
+        ))}
+    
+    </div>
+
+    </>
+  );
 }

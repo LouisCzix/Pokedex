@@ -1,6 +1,7 @@
 import { Breadcrumbs, Link, TextField, Typography, Box, Button } from "@mui/material";
 import { Form } from "react-bootstrap";
 import styles from "./header.module.scss";
+import {Outlet} from "react-router-dom";
 
 export default function Header() {
   return (
@@ -24,25 +25,9 @@ export default function Header() {
             <Button >Search</Button>
           </Form>
       </div>
-
-      <div  >
-        <Breadcrumbs className={styles.container__items}>
-          <Link  className={styles.container__items} underline='none'  href='/'>
-            Home
-          </Link>
-          <Link
-            underline='none'
-            className={styles.container__items}
-            href='/pokedex'
-          >
-            Pokédex
-          </Link>
-          <Link underline='none'  className={styles.container__items} href='/'>
-            About 
-          </Link>
-        </Breadcrumbs>
-      </div>
       </Box>
+      <div><Outlet /></div>
+      
     </>
   );
 }

@@ -1,24 +1,25 @@
-import React, {useEffect, useState} from 'react';
-import { allpokemons } from './Api';
-import Header from './components/Header';
-import './App.module.scss';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
-import Home from './pages/home';
-import { convertLength } from '@mui/material/styles/cssUtils';
-import Pokedex from './pages/pokedex';
-
+import React, { useEffect, useState } from "react";
+import { pokemonData, allPokemons } from "./Api";
+import Header from "./components/Header";
+import "./App.module.scss";
+import Pokedex from "./pages/pokedex";
+import pokemonCard from "./components/Pokemon";
 
 function App() {
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState<any[]>([]);
 
   const fetchPokemons = async () => {
-    const result = await allpokemons();
-    setPokemons(result);
+    try {
+      const result = await allPokemons();
+      const promises = result.results.map(async (pokemon: any) => {
+        return await pokemonData(pokemon.url);
+      });
+
+      const response = await Promise.all(promises);
+      setPokemons(response);
+    } catch (error) {
+      console.log("error fetch ", error);
+    }
   };
 
   useEffect(() => {
@@ -28,18 +29,10 @@ function App() {
 
   return (
     <main>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Header />}>
-            <Route index element={<Home />}/>
-            <Route path='pokedex' element={<Pokedex />}/>
-          </Route>
-        </Routes>
-      
-      </Router>
-      </main>
-    );
-
+      <Header />
+      <Pokedex pokemons={pokemons}></Pokedex>
+    </main>
+  );
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import styles from './home.module.scss';
 import { useEffect, useState } from "react";
-import {allpokemons} from '../../Api/index';
+import {allPokemons} from '../../Api/index';
 
 export default function Home() {
     return (
