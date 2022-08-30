@@ -1,5 +1,9 @@
-.card {
-    display: flex; 
-    justify-content: space-around;
-    color: #E5D2C4;
-}
+@import '../../styles/variaveis';
+
+    .Card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 2em 2em;
+        gap: 2em;
+        font-family: $font;
+    }
