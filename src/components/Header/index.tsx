@@ -1,33 +1,23 @@
-import { Breadcrumbs, Link, TextField, Typography, Box, Button } from "@mui/material";
-import { Form } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
-import {Outlet} from "react-router-dom";
 
-export default function Header() {
+interface PokeProps {
+  pokemons: any[];
+}
+
+export default function Header({pokemons}: PokeProps) {
+  
+
+  
   return (
     <>
-      <Box className={styles.container}>
-      <div>
+      <div className={styles.container}>
         <img
           src='https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png'
           alt=''
         />
       </div>
 
-      <div>
-      <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button >Search</Button>
-          </Form>
-      </div>
-      </Box>
-      <div><Outlet /></div>
-      
     </>
   );
 }
