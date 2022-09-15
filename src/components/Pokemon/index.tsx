@@ -1,21 +1,14 @@
-import {
-  Card,
-  Button,
-  CardMedia,
-  CardContent,
-  CardActions,
-} from "@mui/material";
-import React from "react";
 import styles from "./pokemon.module.scss";
+
 interface PokemonProps {
   pokemons: Record<any, any>;
 }
 
 export default function pokemonCard({ pokemons }: PokemonProps) {
-  const heart = "❤️"
 
-  console.log(pokemons);
+
   return (
+    <div className={styles.container}>
     <div className={styles.pokemonCard}>
       <div className={styles.pokemonImgContainer}>
         <img className={styles.pokemonImg} src={pokemons.sprites.versions['generation-v']['black-white'].animated.front_default} alt={pokemons.name} />
@@ -35,11 +28,9 @@ export default function pokemonCard({ pokemons }: PokemonProps) {
               )
             })}
           </div>
-          <button className={styles.heartBtn}>
-            {heart}
-          </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

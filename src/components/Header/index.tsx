@@ -1,23 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import { searchPokemon } from "../../Api";
+import Search from "../Search";
 import styles from "./header.module.scss";
 
-interface PokeProps {
-  pokemons: any[];
-}
-
-export default function Header({pokemons}: PokeProps) {
-  
-
-  
+export default function Header(props: any) {
+  const { onSearchHandler } = props;
   return (
     <>
       <div className={styles.container}>
-        <img
-          src='https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png'
-          alt=''
-        />
+        <NavLink to='/'>
+          <img
+            src='https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png'
+            alt=''
+          />
+        </NavLink>
+
+        <Search onSearchHandler={onSearchHandler} />
       </div>
 
+      <Outlet />
     </>
   );
 }

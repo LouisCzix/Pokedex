@@ -5,17 +5,24 @@
     display: flex;
     align-items: baseline;
     justify-content: space-around;
+    
 }
 
 .pageSelect {
+    background-color: rgba(6, 9, 15, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
-    border: 1px solid #ddd;
+    margin-top: 10px;
+    justify-content: space-between;
+    font-family: $font;
+
   }
 
 
