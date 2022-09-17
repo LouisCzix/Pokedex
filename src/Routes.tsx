@@ -4,6 +4,7 @@ import "./App.module.scss";
 import Pokedex from "./pages/pokedex";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { allPokemons, pokemonData, searchPokemon } from "./Api";
+import InfoPokemon from "./components/Info";
 
 export default function AppRoutes() {
   const [pokemons, setPokemons] = useState<any[]>([]);
@@ -46,16 +47,15 @@ export default function AppRoutes() {
         setFilteredPokemon(data);
       } else {
         fetchPokemons();
-        setFilteredPokemon([])
+        setFilteredPokemon([]);
       }
-
     } catch (error) {
       console.log("error");
     } finally {
       setLoading(false);
     }
   };
-  
+
   console.log(filteredPokemon);
 
   return (
@@ -80,6 +80,7 @@ export default function AppRoutes() {
                     />
                   }
                 />
+                <Route path="details/:id" element={<InfoPokemon />} />
               </Route>
             </Routes>
           </Router>

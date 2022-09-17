@@ -1,12 +1,15 @@
 import styles from "./pokemon.module.scss";
+import { FiInfo } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 interface PokemonProps {
   pokemons: Record<any, any>;
 }
 
+
 export default function pokemonCard({ pokemons }: PokemonProps) {
 
-
+  
   return (
     <div className={styles.container}>
     <div className={styles.pokemonCard}>
@@ -16,11 +19,11 @@ export default function pokemonCard({ pokemons }: PokemonProps) {
       <div className={styles.cardBody}>
         <div className={styles.cardTop}>
           <h3>{pokemons.name}</h3>
-         
+          <div>#{pokemons.id}</div>
         </div>
         <div className={styles.cardBottom}>
-        <div>#{pokemons.id}</div>
-          <div className={styles.type}>
+
+          <div className={styles.cardBottom__type}>
           
             {pokemons.types.map((type: any) => {
               return (
@@ -28,6 +31,12 @@ export default function pokemonCard({ pokemons }: PokemonProps) {
               )
             })}
           </div>
+          <Link to={`/details/${pokemons.id}`}>
+          <div className={styles.cardBottom__info}>
+          <FiInfo/>
+          </div>
+          </Link>
+
         </div>
       </div>
     </div>

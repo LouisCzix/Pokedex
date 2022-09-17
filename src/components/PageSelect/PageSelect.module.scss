@@ -6,6 +6,7 @@
     align-items: baseline;
     justify-content: space-around;
     
+    
 }
 
 .pageSelect {
@@ -16,13 +17,13 @@
     align-items: center;
     color: white;
     float: left;
-    padding: 8px 16px;
+    padding: 8px 10px;
     text-decoration: none;
     transition: background-color .3s;
     margin-top: 10px;
     justify-content: space-between;
     font-family: $font;
-
+    cursor: pointer;
   }
 
 

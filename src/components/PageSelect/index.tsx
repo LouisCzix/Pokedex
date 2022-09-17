@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./PageSelect.module.scss";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
 interface PokeProps {
 
@@ -28,19 +29,19 @@ export default function PageSelect ({ page, totalPages, setPage}: PokeProps) {
         <div className={styles.container}>
             <div className={styles.pageSelect}>
                 
-                <button onClick={handlePrevious}>
-                    <div>
-                        ❮
+
+                    <div onClick={handlePrevious} >
+                        <HiOutlineChevronLeft/>
                     </div>
-                </button>
+
                 <div>
                     {page} de {totalPages}
                 </div>
-                <button onClick={handleNext}>
-                    <div>
-                    ❯
+
+                    <div onClick={handleNext}>
+                    <HiOutlineChevronRight/>
                     </div>
-                </button>
+
             </div>
         </div>
 

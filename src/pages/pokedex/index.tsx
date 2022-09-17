@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { allPokemons, pokemonData, searchPokemon } from "../../Api";
 import PageSelect from "../../components/PageSelect";
 import PokemonCard from "../../components/Pokemon";
 import styles from "./pokedex.module.scss";
@@ -19,7 +17,7 @@ export default function Pokedex({
   setPage,
   filteredPokemon,
 }: IPokedex) {
-  
+
   return (
     <>
       <div>

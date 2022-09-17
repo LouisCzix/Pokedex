@@ -30,7 +30,7 @@
 
 .cardTop {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-weight: $title;
     
     
@@ -44,21 +44,30 @@
 
 
 .cardBottom {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: space-around;
+
+    &__type {
+        display: flex;
+        grid-column: 2;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
-.type {
-    display: flex;
 
-}
+
+
 
 .typeText {
     margin-right: 10px;
     text-transform: capitalize;
-    border: 3px solid rgb(100, 100, 100);
+    border: 2px solid rgb(100, 100, 100);
     border-radius: 5px;
     padding: 2px
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Search.module.scss";
-import { HiSearch } from "react-icons/hi";
 
 export default function Search(props: any) {
   const [search, setSearch] = useState("");
@@ -15,7 +14,6 @@ export default function Search(props: any) {
     onSearchHandler(search);
   };
 
-  console.log("teste", search);
   return (
     <div className={styles.container}>
       <form name='search' onSubmit={submitForm}>

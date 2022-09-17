@@ -1,0 +1,93 @@
+@import "../../styles/variaveis";
+
+.container {
+  margin: 40px;
+  background-color: rgba(6, 9, 15, 0.836);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: space-around;
+    height: 350px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    border-radius: 12px;
+    background-color: #13131a;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    font-family: $font;
+    font-size: $titleSize;
+    font-weight: $title;
+    color: azure;
+    padding: 20px;
+    text-transform: capitalize;
+  }
+  
+  &__previousButton {
+    color: azure;
+  }
+
+  &__typesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    background-color: #13131a;
+    border-radius: 12px;
+  }
+
+  &__types {
+    display: flex;
+    margin: 10px;
+    font-family: $font;
+    font-size: 20px;
+    font-weight: $subtitle;
+    color: azure;
+    margin-bottom: 30px;
+  }
+
+  &__abilitiesContainer {
+    border-radius: 12px;
+    margin-left: 50px;
+    background-color: #13131a;
+    font-family: $font;
+    font-weight: $title;
+    color: azure;
+    text-transform: capitalize;
+    padding: 15px;
+  }
+
+  &__statusContainer {
+    background-color: #13131a;
+    border-radius: 12px;
+    padding: 15px;
+    margin-right: 50px;
+    display: grid;
+  }
+
+  &__statusText {
+    display: flex;
+    font-family: $font;
+    font-weight: $title;
+    color: azure;
+    text-transform: capitalize;
+    padding: 2px;
+    justify-content: space-between;
+
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+}
