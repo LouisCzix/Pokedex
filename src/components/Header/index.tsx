@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Search from "../Search";
 import styles from "./header.module.scss";

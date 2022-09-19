@@ -56,8 +56,6 @@ export default function AppRoutes() {
     }
   };
 
-  console.log(filteredPokemon);
-
   return (
     <>
       <main>
